@@ -1,0 +1,17 @@
+@keyframes fx-streak{from{translate:-100% 0}to{translate:480% 0}}
+@keyframes fx-ripple{0%{transform:scale(.3);opacity:.8}100%{transform:scale(1);opacity:0}}
+@media (prefers-reduced-motion:no-preference){
+  .fx-play .fx-streak{animation:fx-streak var(--d) linear infinite;animation-delay:calc(var(--o)*-1s)}
+  .fx-play .fx-ripple{animation:fx-ripple 3.6s ease-out infinite;animation-delay:calc(var(--o)*-1s)}
+}
+@keyframes fx-blink{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes fx-wave{0%,100%{opacity:.15}40%{opacity:1}}
+@media (prefers-reduced-motion:no-preference){
+  .fx-play .fx-blink{animation:fx-blink 1.6s ease-in-out infinite;animation-delay:calc(var(--o)*1s)}
+  .fx-play .fx-wave{animation:fx-wave 2.4s ease-in-out infinite;animation-delay:calc(var(--o)*1s)}
+}
+@keyframes fx-drop{from{translate:0 -120%}to{translate:0 420%}}
+@media (prefers-reduced-motion:no-preference){
+  .fx-play .fx-drop{animation:fx-drop var(--d) linear infinite;animation-delay:calc(var(--o)*-1s)}
+  .fx-play .fx-breathe{animation:fx-ripple 4.8s ease-out infinite;animation-delay:calc(var(--o)*-1s)}
+}

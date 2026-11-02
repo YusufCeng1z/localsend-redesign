@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030606;
+  --foreground: #ededed;
+  --surface: rgba(10, 16, 16, 0.76);
+  --surface-solid: rgb(10, 16, 16);
+  --line: rgba(169, 169, 169, 0.12);
+  --surface-strong: rgba(10, 16, 16, 0.92);
+  --hl: rgba(255, 255, 255, 0.08);
+  --accent: #2fc6b7;
+  --accent-hover: #3dd4c5;
+  --on-accent: #030606;
+  --accent-text: #2fc6b7;
+}
+
+:root[data-theme="light"] {
+  --background: #f6f8f8;
+  --foreground: #0a1010;
+  --surface: rgba(255, 255, 255, 0.76);
+  --surface-solid: #fff;
+  --line: rgba(10, 16, 16, 0.12);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --hl: rgba(10, 16, 16, 0.07);
+  --accent: #2fc6b7;
+  --accent-hover: #28b5a7;
+  --on-accent: #030606;
+  --accent-text: #0b7a70;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-on-accent: var(--on-accent);
+  --color-accent-text: var(--accent-text);
+  --font-sans: var(--font-instrument-sans);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-instrument-sans), sans-serif;
+}
+
+
+
+
+/* FAQ answers slide open; browsers without ::details-content just toggle. */
+@media (prefers-reduced-motion: no-preference) {
+  :root { interpolate-size: allow-keywords; }
+  details.faq::details-content { block-size: 0; overflow: hidden; transition: block-size 0.25s cubic-bezier(0.2, 0, 0, 1), content-visibility 0.25s allow-discrete; }
+  details.faq[open]::details-content { block-size: auto; }
 }
