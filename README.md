@@ -4,6 +4,8 @@ An unofficial redesign concept of the [localsend.org](https://localsend.org) hom
 
 It is not affiliated with the LocalSend project.
 
+**Live demo: https://localsend-redesign.vercel.app**
+
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/light-hero.webp">
   <img alt="Hero: Share files without the cloud. Fast, private, offline." src="docs/screenshots/dark-hero.webp">
